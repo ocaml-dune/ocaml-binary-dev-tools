@@ -8,9 +8,10 @@
   outputs = { self, nixpkgs, flake-utils, ocaml-overlays, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = (import nixpkgs { inherit system; }).appendOverlays
+          [ ocaml-overlays.overlays.default ];
         fixMissingStripInOcaml_5_2 =
-          # The ocaml.5.2.0 derivation is missing a dependency on the "strip"
+          # The ocaml.5.2.0 derivation is missing a depenency on the "strip"
           # program when cross compiling with muslc, so this overlay adds a
           # dependency on binutils which contains that program.
           (self: super: {
@@ -24,10 +25,11 @@
                 });
             };
           });
-        pkgsStatic = pkgs.pkgsCross.musl64.appendOverlays [
-          ocaml-overlays.overlays.default
-          fixMissingStripInOcaml_5_2
-        ];
+        pkgsStatic =
+          (import nixpkgs { inherit system; }).pkgsCross.musl64.appendOverlays [
+            ocaml-overlays.overlays.default
+            fixMissingStripInOcaml_5_2
+          ];
         sha256ByVersion = {
           "0.19.0" = "0ihgwl7d489g938m1jvgx8azdgq9f5np5mzqwwya797hx2m4dz32";
           "0.20.0" = "sha256-JtmNCgwjbCyUE4bWqdH5Nc2YSit+rekwS43DcviIfgk=";
