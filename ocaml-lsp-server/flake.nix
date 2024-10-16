@@ -77,6 +77,11 @@
             ];
           }).overrideAttrs {
             patches = if isStatic then [ ./static.diff ] else [ ];
+            postInstall = ''
+              find $out -type f -executable -exec chmod +w {} +
+              find $out -type f -executable -exec ${pkgs.binutils}/bin/strip --strip-all {} +
+              find $out -type f -executable -exec chmod a-w {} +
+            '';
           };
         staticPackages = with pkgsStatic.ocaml-ng; {
           ocaml_lsp_server_1_19_0_ocaml_5_2_0_static = ocamllspPackage {

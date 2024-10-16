@@ -94,6 +94,11 @@
             ];
           }).overrideAttrs {
             patches = if isStatic then [ ./static.diff ] else [ ];
+            postInstall = ''
+              find $out -type f -executable -exec chmod +w {} +
+              find $out -type f -executable -exec ${pkgs.binutils}/bin/strip --strip-all {} +
+              find $out -type f -executable -exec chmod a-w {} +
+            '';
           };
         staticPackages = with pkgsStatic.ocaml-ng; {
           ocamlformat_0_26_2_ocaml_5_2_0_static = ocamlformatPackage {
