@@ -11,7 +11,7 @@
         pkgs = (import nixpkgs { inherit system; }).appendOverlays
           [ ocaml-overlays.overlays.default ];
         fixMissingStripInOcaml_5_2 =
-          # The ocaml.5.2.0 derivation is missing a depenency on the "strip"
+          # The ocaml.5.2.0 derivation is missing a dependency on the "strip"
           # program when cross compiling with muslc, so this overlay adds a
           # dependency on binutils which contains that program.
           (self: super: {
@@ -111,31 +111,6 @@
             ocamlPackages = ocamlPackages_5_0;
             isStatic = true;
           };
-          ocamlformat_0_26_2_ocaml_4_14_2_static = ocamlformatPackage {
-            version = "0.26.2";
-            ocamlPackages = ocamlPackages_4_14;
-            isStatic = true;
-          };
-          ocamlformat_0_26_1_ocaml_5_2_0_static = ocamlformatPackage {
-            version = "0.26.1";
-            ocamlPackages = ocamlPackages_5_2;
-            isStatic = true;
-          };
-          ocamlformat_0_26_1_ocaml_5_1_1_static = ocamlformatPackage {
-            version = "0.26.1";
-            ocamlPackages = ocamlPackages_5_1;
-            isStatic = true;
-          };
-          ocamlformat_0_26_1_ocaml_5_0_0_static = ocamlformatPackage {
-            version = "0.26.1";
-            ocamlPackages = ocamlPackages_5_0;
-            isStatic = true;
-          };
-          ocamlformat_0_26_1_ocaml_4_14_2_static = ocamlformatPackage {
-            version = "0.26.1";
-            ocamlPackages = ocamlPackages_4_14;
-            isStatic = true;
-          };
         };
         dynamicPackages = with pkgs.ocaml-ng; {
           ocamlformat_0_26_2_ocaml_5_2_0_dynamic = ocamlformatPackage {
@@ -151,11 +126,6 @@
           ocamlformat_0_26_2_ocaml_5_0_0_dynamic = ocamlformatPackage {
             version = "0.26.2";
             ocamlPackages = ocamlPackages_5_0;
-            isStatic = false;
-          };
-          ocamlformat_0_26_2_ocaml_4_14_2_dynamic = ocamlformatPackage {
-            version = "0.26.2";
-            ocamlPackages = ocamlPackages_4_14;
             isStatic = false;
           };
         };

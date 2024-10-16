@@ -1,0 +1,47 @@
+name: Build
+on:
+  push:
+    tags:
+    - '*'
+
+jobs:
+  ocamlformat:
+    name: Build ocamlformat binaries
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-13, macos-14]
+        ocaml: ["5.2.0", "5.1.1", "5.0.0"]
+        include:
+          - os: ubuntu-latest
+            version: "0.26.2"
+            linking: static
+            target_triple: x86_64-unknown-linux-musl
+          - os: macos-13
+            version: "0.26.2"
+            linking: dynamic
+            target_triple: x86_64-apple-darwin
+          - os: macos-14
+            version: "0.26.2"
+            linking: dynamic
+            target_triple: aarch64-apple-darwin
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Set archive environment variables
+        run: |
+          echo "FLAKE_NAME=ocamlformat/#ocamlformat_$(echo ${{ matrix.version }} | tr . _)_ocaml_$(echo ${{ matrix.ocaml }} | tr . _)_${{ matrix.linking }}" >> $GITHUB_ENV
+          echo "ARCHIVE_NAME=ocamlformat-${{ matrix.version }}-ocaml${{ matrix.ocaml }}-${{ matrix.target_triple }}" >> $GITHUB_ENV
+
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v22
+      - run: nix build $FLAKE_NAME
+      - run: mkdir -p $ARCHIVE_NAME
+      - run: cp -r result/* $ARCHIVE_NAME
+      - run: tar --format=posix -cvf $ARCHIVE_NAME.tar $ARCHIVE_NAME
+      - run: gzip -9 $ARCHIVE_NAME.tar
+      - uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          artifacts: "*.tar.gz"
+
