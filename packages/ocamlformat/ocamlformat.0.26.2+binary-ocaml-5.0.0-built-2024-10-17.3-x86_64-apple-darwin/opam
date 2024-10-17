@@ -30,11 +30,11 @@ install: [
 ]
 dev-repo: "git+https://github.com/ocaml-ppx/ocamlformat.git"
 available: arch = "x86_64" & os = "macos"
-conflicts: "ocaml" {!= "5.1.1"}
+conflicts: "ocaml" {!= "5.0.0"}
 url {
-  src: "https://github.com/gridbugs/ocaml-binary-dev-tools/releases/download/2024-10-17.2/ocamlformat.0.26.2+binary-ocaml-5.1.1-built-2024-10-17.2-x86_64-apple-darwin.tar.gz"
+  src: "https://github.com/gridbugs/ocaml-binary-dev-tools/releases/download/2024-10-17.3/ocamlformat.0.26.2+binary-ocaml-5.0.0-built-2024-10-17.3-x86_64-apple-darwin.tar.gz"
   checksum: [
-    "sha256=867bdb76fdccbc3cc28098bc29b20346a5c294c9d0de50c6777f4cb864ed4c19"
-    "sha512=92acaad70debf204b9d4947aee4a047001847938fe78e1f9a9b5d103d5aa8b53f708fec217394226515acaf33f946aacd0e0d4e103e1448744273087904e98cc"
+    "sha256=e67be32fb3360ca3f8fc2c12cf8cd66be97131b6592f609afc0bc771e7a07fb4"
+    "sha512=589190a40567b15a1638942062156b12e90024de771628ed20d97e374ac004591c81678c03ed55f661a92843a2f247ffa78c8873a120cb0b6a67a5924a66fff9"
   ]
 }

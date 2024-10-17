@@ -32,9 +32,9 @@ dev-repo: "git+https://github.com/ocaml-ppx/ocamlformat.git"
 available: arch = "x86_64" & os = "linux"
 conflicts: "ocaml" {!= "5.1.1"}
 url {
-  src: "https://github.com/gridbugs/ocaml-binary-dev-tools/releases/download/2024-10-17.2/ocamlformat.0.26.2+binary-ocaml-5.1.1-built-2024-10-17.2-x86_64-unknown-linux-musl.tar.gz"
+  src: "https://github.com/gridbugs/ocaml-binary-dev-tools/releases/download/2024-10-17.3/ocamlformat.0.26.2+binary-ocaml-5.1.1-built-2024-10-17.3-x86_64-unknown-linux-musl.tar.gz"
   checksum: [
-    "sha256=2c66947c0512a4dbb91d51f38e318fff7d0765f2c64d8338342149ca3583fed2"
-    "sha512=af5f38580108d15839d9a61ef1c9b0b20ab4eec5611e4417b2625b36bb5c10336d487570fbc4adbdefdb037b6448bb4ec527570d0e0116c542bdfdec6fa1a3f5"
+    "sha256=c2bec6c78ebf61fda9035ad6e963b4aa9f2d378f8336f16d66c056410cde05cb"
+    "sha512=532d0afd5df54d94f0e6b7d0e756a8f4e3735f342a345c5937d744a3de52b44b5b2f2c4271b624bdda763cfd0f26efa5bdf68ce7f6d1c1b8cbea7cf1a7140c01"
   ]
 }

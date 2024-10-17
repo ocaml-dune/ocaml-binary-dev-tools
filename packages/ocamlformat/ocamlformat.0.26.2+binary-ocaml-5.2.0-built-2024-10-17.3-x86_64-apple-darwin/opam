@@ -29,12 +29,12 @@ install: [
   [ "find" "." "-type" "f" "-exec" "cp" "{}" "%{prefix}%/{}" ";" ]
 ]
 dev-repo: "git+https://github.com/ocaml-ppx/ocamlformat.git"
-available: arch = "arm64" & os = "macos"
-conflicts: "ocaml" {!= "5.0.0"}
+available: arch = "x86_64" & os = "macos"
+conflicts: "ocaml" {!= "5.2.0"}
 url {
-  src: "https://github.com/gridbugs/ocaml-binary-dev-tools/releases/download/2024-10-17.2/ocamlformat.0.26.2+binary-ocaml-5.0.0-built-2024-10-17.2-aarch64-apple-darwin.tar.gz"
+  src: "https://github.com/gridbugs/ocaml-binary-dev-tools/releases/download/2024-10-17.3/ocamlformat.0.26.2+binary-ocaml-5.2.0-built-2024-10-17.3-x86_64-apple-darwin.tar.gz"
   checksum: [
-    "sha256=aafb67333727c267ce15207727d527cbb420c47136037c32ce90122b4f11b336"
-    "sha512=60db3c0589c3613398a9162d5dba60cc43bb1a2c4c037f3ec9d811e6fa7a618e773fa72dee9698bc232c88ccaf66463c3ebb2a51a86ad09a15f18dc431f1091e"
+    "sha256=a285f9b8fc4061f51e3093e698a92e825d4e8109cdb80723d978962024309992"
+    "sha512=cd152a295901a986cf52a68677a40d58bb5f4d7b136b73f384933fe65a895e899bfb69a23e969d40994720e17096fdffd161a98c065e1a0a182bb3810f878c96"
   ]
 }
