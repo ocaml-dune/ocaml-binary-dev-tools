@@ -108,37 +108,11 @@
             isStatic = true;
             strip = true;
           };
-          ocamlformat_0_26_2_ocaml_5_1_1_static = ocamlformatPackage {
-            version = "0.26.2";
-            ocamlPackages = ocamlPackages_5_1;
-            isStatic = true;
-            strip = true;
-          };
-          ocamlformat_0_26_2_ocaml_5_0_0_static = ocamlformatPackage {
-            version = "0.26.2";
-            ocamlPackages = ocamlPackages_5_0;
-            isStatic = true;
-            strip = true;
-          };
         };
         dynamicPackages = with pkgs.ocaml-ng; {
           ocamlformat_0_26_2_ocaml_5_2_0_dynamic = ocamlformatPackage {
             version = "0.26.2";
             ocamlPackages = ocamlPackages_5_2;
-            isStatic = false;
-            strip =
-              false; # stripping on macos produces executables that don't work
-          };
-          ocamlformat_0_26_2_ocaml_5_1_1_dynamic = ocamlformatPackage {
-            version = "0.26.2";
-            ocamlPackages = ocamlPackages_5_1;
-            isStatic = false;
-            strip =
-              false; # stripping on macos produces executables that don't work
-          };
-          ocamlformat_0_26_2_ocaml_5_0_0_dynamic = ocamlformatPackage {
-            version = "0.26.2";
-            ocamlPackages = ocamlPackages_5_0;
             isStatic = false;
             strip =
               false; # stripping on macos produces executables that don't work
