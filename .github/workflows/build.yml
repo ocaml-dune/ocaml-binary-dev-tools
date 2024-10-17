@@ -42,7 +42,7 @@ jobs:
           nix build $FLAKE_NAME
           mkdir -p $ARCHIVE_NAME
           cp -r result/* $ARCHIVE_NAME
-          cp -r ocamlformat/static/* $ARCHIVE_NAME
+          cp -r flakes/ocamlformat/static/* $ARCHIVE_NAME
           find $ARCHIVE_NAME -type d -exec chmod +w {} +
           tar --format=posix -cvf $ARCHIVE_NAME.tar $ARCHIVE_NAME
           gzip -9 $ARCHIVE_NAME.tar
@@ -88,7 +88,7 @@ jobs:
           nix build $FLAKE_NAME
           mkdir -p $ARCHIVE_NAME
           cp -r result/* $ARCHIVE_NAME
-          cp -r ocaml-lsp-server/static/* $ARCHIVE_NAME
+          cp -r flakes/ocaml-lsp-server/static/* $ARCHIVE_NAME
           find $ARCHIVE_NAME -type d -exec chmod +w {} +
           tar --format=posix -cvf $ARCHIVE_NAME.tar $ARCHIVE_NAME
           gzip -9 $ARCHIVE_NAME.tar
