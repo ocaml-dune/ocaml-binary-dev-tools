@@ -33,7 +33,7 @@ jobs:
       - name: Set archive environment variables
         run: |
           echo "FLAKE_NAME=./flakes/ocamlformat/#ocamlformat_$(echo ${{ matrix.version }} | tr . _)_ocaml_$(echo ${{ matrix.ocaml }} | tr . _)_${{ matrix.linking }}" >> $GITHUB_ENV
-          echo "ARCHIVE_NAME=ocamlformat.${{ matrix.version }}-ocaml-${{ matrix.ocaml }}-built-${{ github.ref_name }}-${{ matrix.target_triple }}" >> $GITHUB_ENV
+          echo "ARCHIVE_NAME=ocamlformat.${{ matrix.version }}+binary-ocaml-${{ matrix.ocaml }}-built-${{ github.ref_name }}-${{ matrix.target_triple }}" >> $GITHUB_ENV
 
       - uses: actions/checkout@v4
       - uses: cachix/install-nix-action@v22
@@ -79,7 +79,7 @@ jobs:
       - name: Set archive environment variables
         run: |
           echo "FLAKE_NAME=./flakes/ocaml-lsp-server/#ocaml_lsp_server_$(echo ${{ matrix.version }} | tr . _)_ocaml_$(echo ${{ matrix.ocaml }} | tr . _)_${{ matrix.linking }}" >> $GITHUB_ENV
-          echo "ARCHIVE_NAME=ocaml-lsp-server.${{ matrix.version }}-ocaml-${{ matrix.ocaml }}-built-${{ github.ref_name }}-${{ matrix.target_triple }}" >> $GITHUB_ENV
+          echo "ARCHIVE_NAME=ocaml-lsp-server.${{ matrix.version }}+binary-ocaml-${{ matrix.ocaml }}-built-${{ github.ref_name }}-${{ matrix.target_triple }}" >> $GITHUB_ENV
 
       - uses: actions/checkout@v4
       - uses: cachix/install-nix-action@v22
