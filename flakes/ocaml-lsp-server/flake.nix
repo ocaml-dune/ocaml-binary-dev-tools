@@ -34,7 +34,7 @@
           "1.18.0" = "sha256-tZ2kPM/S/9J3yeX2laDjnHLA144b8svy9iwae32nXwM=";
           "1.19.0" = "sha256-54PZ8af4nOG/TJFIqjSiKDaL0Um7zKQ96AtFkiHe5ew=";
         };
-        ocamllspPackage = { version, ocamlPackages, isStatic }:
+        ocamllspPackage = { version, ocamlPackages, isStatic, strip }:
           let
             tarballName = "lsp-${version}.tbz";
             src = pkgs.fetchurl {
@@ -77,17 +77,19 @@
             ];
           }).overrideAttrs {
             patches = if isStatic then [ ./static.diff ] else [ ];
-            postInstall = ''
+            postInstall = if strip then ''
               find $out -type f -executable -exec chmod +w {} +
               find $out -type f -executable -exec ${pkgs.binutils}/bin/strip --strip-all {} +
               find $out -type f -executable -exec chmod a-w {} +
-            '';
+            '' else
+              "";
           };
         staticPackages = with pkgsStatic.ocaml-ng; {
           ocaml_lsp_server_1_19_0_ocaml_5_2_0_static = ocamllspPackage {
             version = "1.19.0";
             ocamlPackages = ocamlPackages_5_2;
             isStatic = true;
+            strip = true;
           };
         };
         dynamicPackages = with pkgs.ocaml-ng; {
@@ -95,6 +97,8 @@
             version = "1.19.0";
             ocamlPackages = ocamlPackages_5_2;
             isStatic = false;
+            strip =
+              false; # stripping on macos produces executables that don't work
           };
         };
       in { packages = staticPackages // dynamicPackages; });

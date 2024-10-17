@@ -44,7 +44,7 @@
           "0.26.1" = "sha256-2gBuQn8VuexhL7gI1EZZm9m3w+4lq+s9VVdHpw10xtc=";
           "0.26.2" = "sha256-Lk9Za/eqNnqET+g7oPawvxSyplF53cCCNj/peT0DdcU=";
         };
-        ocamlformatPackage = { version, ocamlPackages, isStatic }:
+        ocamlformatPackage = { version, ocamlPackages, isStatic, strip }:
           let
             tarballName = "ocamlformat-${version}.tbz";
             src = pkgs.fetchurl {
@@ -94,27 +94,31 @@
             ];
           }).overrideAttrs {
             patches = if isStatic then [ ./static.diff ] else [ ];
-            postInstall = ''
+            postInstall = if strip then ''
               find $out -type f -executable -exec chmod +w {} +
               find $out -type f -executable -exec ${pkgs.binutils}/bin/strip --strip-all {} +
               find $out -type f -executable -exec chmod a-w {} +
-            '';
+            '' else
+              "";
           };
         staticPackages = with pkgsStatic.ocaml-ng; {
           ocamlformat_0_26_2_ocaml_5_2_0_static = ocamlformatPackage {
             version = "0.26.2";
             ocamlPackages = ocamlPackages_5_2;
             isStatic = true;
+            strip = true;
           };
           ocamlformat_0_26_2_ocaml_5_1_1_static = ocamlformatPackage {
             version = "0.26.2";
             ocamlPackages = ocamlPackages_5_1;
             isStatic = true;
+            strip = true;
           };
           ocamlformat_0_26_2_ocaml_5_0_0_static = ocamlformatPackage {
             version = "0.26.2";
             ocamlPackages = ocamlPackages_5_0;
             isStatic = true;
+            strip = true;
           };
         };
         dynamicPackages = with pkgs.ocaml-ng; {
@@ -122,16 +126,22 @@
             version = "0.26.2";
             ocamlPackages = ocamlPackages_5_2;
             isStatic = false;
+            strip =
+              false; # stripping on macos produces executables that don't work
           };
           ocamlformat_0_26_2_ocaml_5_1_1_dynamic = ocamlformatPackage {
             version = "0.26.2";
             ocamlPackages = ocamlPackages_5_1;
             isStatic = false;
+            strip =
+              false; # stripping on macos produces executables that don't work
           };
           ocamlformat_0_26_2_ocaml_5_0_0_dynamic = ocamlformatPackage {
             version = "0.26.2";
             ocamlPackages = ocamlPackages_5_0;
             isStatic = false;
+            strip =
+              false; # stripping on macos produces executables that don't work
           };
         };
       in { packages = staticPackages // dynamicPackages; });
