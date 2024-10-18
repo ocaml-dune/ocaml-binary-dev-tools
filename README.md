@@ -11,7 +11,7 @@ This project contains:
 
 Add this repo to the current opam switch:
 ```
-$ opam repository add binary-dev-tools git+https://github.com/gridbugs/ocaml-binary-dev-tools
+$ opam repository add binary-dev-tools git+https://github.com/ocaml-dune/ocaml-binary-dev-tools
 ```
 
 ## Maintenance notes
