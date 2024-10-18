@@ -1,6 +1,10 @@
 #!/bin/sh
 set -eu
 
+# Usage: ./generate-opam-url-section.sh URL
+# Prints out the "url { ... }" section of an opam file containing the specified
+# url and hashes of the file that it points to.
+
 url="$1"
 tmp_dir=$(mktemp -d)
 trap 'rm -r "$tmp_dir"' EXIT
