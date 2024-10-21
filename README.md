@@ -1,6 +1,6 @@
-# OCaml Binary Dev Tools
+# OCaml Binary Packages
 
-Binary distributions of some OCaml development tools.
+Binary distributions of some OCaml packages.
 
 This project contains:
  - `flakes` - nix build scripts for the packages in this repo
@@ -11,7 +11,7 @@ This project contains:
 
 Add this repo to the current opam switch:
 ```
-$ opam repository add binary-dev-tools git+https://github.com/ocaml-dune/ocaml-binary-dev-tools
+$ opam repository add binary-packages git+https://github.com/ocaml-dune/ocaml-binary-packages
 ```
 
 ## Maintenance notes

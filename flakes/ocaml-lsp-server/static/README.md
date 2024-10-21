@@ -1,3 +1,3 @@
 # ocaml-lsp-server binary distribution
 
-See https://github.com/ocaml-dune/ocaml-binary-dev-tools for more information.
+See https://github.com/ocaml-dune/ocaml-binary-packages for more information.
