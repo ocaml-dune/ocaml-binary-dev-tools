@@ -52,6 +52,28 @@
                 yojson
               ];
             };
+            merlin-lib_4_16_501 = let version = "4.16-501";
+            in ocamlPackages.buildDunePackage {
+              pname = "merlin-lib";
+              inherit version;
+              src = pkgs.fetchurl {
+                url =
+                  "https://github.com/ocaml/merlin/releases/download/v${version}/merlin-${version}.tbz";
+                sha256 = "sha256-2lvzCbBAZFwpKuRXLMagpwDb0rz8mWrBPI5cODbCHiY=";
+              };
+              buildInputs = with ocamlPackages; [ csexp ];
+            };
+            merlinLibVersionByOcamlLspVersion =
+              # Note that the version constraints in the ocaml-lsp-server package
+              # are too broad and will try to use a version of merlin-lib too
+              # recent to be compatible in some cases. This table maps versions
+              # of ocaml-lsp-server to known compatible versions of merlin-lib.
+              {
+                "1.18.0" = merlin-lib_4_16_501;
+                "1.19.0" = ocamlPackages.merlin-lib;
+              };
+            merlin-lib-for-this-ocaml-lsp =
+              merlinLibVersionByOcamlLspVersion."${version}";
           in (ocamlPackages.buildDunePackage {
             pname = "ocaml-lsp-server";
             inherit src version;
@@ -65,7 +87,7 @@
               fiber
               jsonrpc
               lsp
-              merlin-lib
+              merlin-lib-for-this-ocaml-lsp
               ocamlc-loc
               ocamlformat-rpc-lib
               ppx_yojson_conv_lib
@@ -91,11 +113,24 @@
             isStatic = true;
             strip = true;
           };
+          ocaml_lsp_server_1_18_0_ocaml_5_1_1_static = ocamllspPackage {
+            version = "1.18.0";
+            ocamlPackages = ocamlPackages_5_1;
+            isStatic = true;
+            strip = true;
+          };
         };
         dynamicPackages = with pkgs.ocaml-ng; {
           ocaml_lsp_server_1_19_0_ocaml_5_2_0_dynamic = ocamllspPackage {
             version = "1.19.0";
             ocamlPackages = ocamlPackages_5_2;
+            isStatic = false;
+            strip =
+              false; # stripping on macos produces executables that don't work
+          };
+          ocaml_lsp_server_1_18_0_ocaml_5_1_1_dynamic = ocamllspPackage {
+            version = "1.18.0";
+            ocamlPackages = ocamlPackages_5_1;
             isStatic = false;
             strip =
               false; # stripping on macos produces executables that don't work
