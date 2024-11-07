@@ -21,7 +21,7 @@ authors: [
   "Guillaume Petiot <guillaume@tarides.com>"
   "Jules Aguillon <jules@j3s.fr>"
 ]
-license: ["MIT" "LGPL-2.1-only WITH OCaml-LGPL-linkiexception"]
+license: ["MIT" "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"]
 homepage: "https://github.com/ocaml-ppx/ocamlformat"
 bug-reports: "https://github.com/ocaml-ppx/ocamlformat/issues"
 install: [
@@ -29,11 +29,11 @@ install: [
   [ "find" "." "-type" "f" "-exec" "cp" "{}" "%{prefix}%/{}" ";" ]
 ]
 dev-repo: "git+https://github.com/ocaml-ppx/ocamlformat.git"
-available: arch = "arm64" & os = "macos"
+available: arch = "x86_64" & os = "macos"
 url {
-  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-10-18.0/ocamlformat.0.26.2+binary-ocaml-5.2.0-built-2024-10-18.0-aarch64-apple-darwin.tar.gz"
+  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-11-07.0/ocamlformat.0.26.2+binary-ocaml-5.2.0-built-2024-11-07.0-x86_64-apple-darwin.tar.gz"
   checksum: [
-    "sha256=c52fc74fe87c8625ef4719a62b517b39629702c197c62ebfa31d5cd88952180f"
-    "sha512=cae294ae48fe837520fade2733bdfeb3e0b033bfc5dfc3cffd374d532c9b41a97545f7c49d995c64cda7cea5ba096ca76ceddea3cef2027617f898f59980d18f"
+    "sha256=78b83466b867f84d3d96d9dc8a8e43c841da6f8a68537047940e4abd978c432d"
+    "sha512=2ad7b163fb0af567f7aa212ddeb712f002051d935940588257a7bc22443ede9b8cb8f4927619211fb5f49af8e3cf437b00a45b7709038c1115e520020b843941"
   ]
 }
