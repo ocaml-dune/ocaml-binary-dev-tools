@@ -18,8 +18,8 @@ opam install -y "ocaml-lsp-server.$OCAML_LSP_SERVER_VERSION"
 
 ARCHIVE_NAME="ocaml-lsp-server.$OCAML_LSP_SERVER_VERSION+binary-ocaml-$OCAML_VERSION-built-$TAG-$TARGET"
 
-mkdir -p "$ARCHIVE_NAME"
-cp _opam/bin/ocamllsp "$ARCHIVE_NAME"
+mkdir -p "$ARCHIVE_NAME/bin"
+cp _opam/bin/ocamllsp "$ARCHIVE_NAME/bin"
 cat > "$ARCHIVE_NAME/README.md" <<EOF
 # ocaml-lsp-server binary distribution
 
