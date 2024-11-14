@@ -1,6 +1,5 @@
 opam-version: "2.0"
 name: "ocaml-lsp-server"
-version: "1.20.0~5.3preview"
 synopsis: "LSP Server for OCaml"
 description: "An LSP server for OCaml."
 maintainer: "Rudi Grinberg <me@rgrinberg.com>"
