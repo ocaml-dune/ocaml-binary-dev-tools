@@ -1,13 +1,6 @@
 #!/bin/sh
 set -eu
 
-TAG=$1
-TARGET=$2
-OUTPUT=$3
-
-OCAML_VERSION=5.1.1
-OCAML_LSP_SERVER_VERSION=1.18.0
-
 TMP_DIR="$(mktemp -d -t ocaml-binary-packages-build.XXXXXXXXXX)"
 trap 'rm -rf "$TMP_DIR"' EXIT
 
