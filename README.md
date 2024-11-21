@@ -3,7 +3,7 @@
 Binary distributions of some OCaml packages.
 
 This project contains:
- - `flakes` - nix build scripts for the packages in this repo
+ - `build-scripts` - shell scripts and dockerfiles for building packages
  - `packages` - opam package manifests for the packages in this repo
  - `tools` - tools to help maintain this repo
 
