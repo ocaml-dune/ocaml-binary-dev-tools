@@ -1,0 +1,39 @@
+opam-version: "2.0"
+name: "ocamlformat"
+version: "0.26.1"
+synopsis: "Auto-formatter for OCaml code"
+description: """\
+**ocamlformat** is a code formatter for OCaml. It comes with opinionated default settings but is also fully customizable to suit your coding style.
+
+- **Profiles:** ocamlformat offers profiles we predefined formatting configurations. Profiles include `default`, `ocamlformat`, `janestreet`.
+- **Configurable:** Users can change the formatting profile and configure every option in their `.ocamlformat` configuration file.
+- **Format Comments:** ocamlformat can format comments, docstrings, and even code blocks in your comments.
+- **RPC:** ocamlformat provides an RPC server that can be used by other tools to easily format OCaml Code."""
+maintainer: [
+  "Guillaume Petiot <guillaume@tarides.com>"
+  "Jules Aguillon <jules@j3s.fr>"
+  "Emile Trotignon <emile@tarides.com>"
+]
+authors: [
+  "Josh Berdine <jjb@fb.com>"
+  "Hugo Heuzard <hugo.heuzard@gmail.com>"
+  "Etienne Millon <etienne@tarides.com>"
+  "Guillaume Petiot <guillaume@tarides.com>"
+  "Jules Aguillon <jules@j3s.fr>"
+]
+license: ["MIT" "LGPL-2.1-only WITH OCaml-LGPL-linkiexception"]
+homepage: "https://github.com/ocaml-ppx/ocamlformat"
+bug-reports: "https://github.com/ocaml-ppx/ocamlformat/issues"
+install: [
+  [ "find" "." "-type" "d" "-exec" "mkdir" "-p" "%{prefix}%/{}" ";" ]
+  [ "find" "." "-type" "f" "-exec" "cp" "{}" "%{prefix}%/{}" ";" ]
+]
+dev-repo: "git+https://github.com/ocaml-ppx/ocamlformat.git"
+available: arch = "x86_64" & os = "linux"
+url {
+  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-11-21.0/ocamlformat.0.26.1+binary-ocaml-5.1.1-built-2024-11-21.0-x86_64-unknown-linux-musl.tar.gz"
+  checksum: [
+    "sha256=6334611f0e7adcace1a69cd7bdc875899b32319d207cec817d4c9b5eb0ad6876"
+    "sha512=030192bccdbb6227ee3c7e53bf5cb3b4f86ee402fbd43348969b487feecd76f5de84f9b25b7e4cde57e3c2f94bd17ba22aaef3c0795aa8f5f4a5af4108de3763"
+  ]
+}
