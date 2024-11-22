@@ -5,7 +5,6 @@ Binary distributions of some OCaml packages.
 This project contains:
  - `build-scripts` - shell scripts and dockerfiles for building packages
  - `packages` - opam package manifests for the packages in this repo
- - `tools` - tools to help maintain this repo
 
 ## How to use
 
