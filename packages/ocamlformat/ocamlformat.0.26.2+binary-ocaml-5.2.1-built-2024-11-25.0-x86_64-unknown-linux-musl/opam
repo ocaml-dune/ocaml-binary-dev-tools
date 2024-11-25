@@ -31,9 +31,9 @@ install: [
 dev-repo: "git+https://github.com/ocaml-ppx/ocamlformat.git"
 available: arch = "x86_64" & os = "linux"
 url {
-  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-11-21.0/ocamlformat.0.26.2+binary-ocaml-5.2.1-built-2024-11-21.0-x86_64-unknown-linux-musl.tar.gz"
+  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-11-25.0/ocamlformat.0.26.2+binary-ocaml-5.2.1-built-2024-11-25.0-x86_64-unknown-linux-musl.tar.gz"
   checksum: [
-    "sha256=2a811d3b7283e45bedfe872cdaae470560ac3018b0cc54552edff69b949172dc"
-    "sha512=85c61b4a4adfdbee190b7343bd07274acd046d13a85a447b00545dac8f7e2de29ec47a5e8307f76f93f11f8deac85478b162cf784b8daa9202b7e9be97c0038c"
+    "sha256=4611dd8191c5751733fa352f4fcb7187072ffff1b8e13f03221f600fa18c3eb6"
+    "sha512=02e9ffc8b037d07b046abcb18175fec678b5246b362e7b5f18bc118ec0c3fcb0190b9708d27bd85945b02cc4a5b397edbbc6040cbda2e824c02964f537c90628"
   ]
 }

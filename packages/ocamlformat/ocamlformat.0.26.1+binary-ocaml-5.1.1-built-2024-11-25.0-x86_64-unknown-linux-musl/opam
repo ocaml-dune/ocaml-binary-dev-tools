@@ -29,11 +29,11 @@ install: [
   [ "find" "." "-type" "f" "-exec" "cp" "{}" "%{prefix}%/{}" ";" ]
 ]
 dev-repo: "git+https://github.com/ocaml-ppx/ocamlformat.git"
-available: arch = "arm64" & os = "macos"
+available: arch = "x86_64" & os = "linux"
 url {
-  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-11-21.0/ocamlformat.0.26.1+binary-ocaml-5.1.1-built-2024-11-21.0-aarch64-apple-darwin.tar.gz"
+  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-11-25.0/ocamlformat.0.26.1+binary-ocaml-5.1.1-built-2024-11-25.0-x86_64-unknown-linux-musl.tar.gz"
   checksum: [
-    "sha256=b9be22d4fb20690fedff754a1e8d107ec23cce21fb93daa70c6b35a0031251f2"
-    "sha512=d65370756afc7cf68df5fbd6c22bf2509ccfb13af65e137542f13c63373ee8419a2161facdc669aebbd129cf03f57bf733431d34f17732bd6a9485c7bbcf0c2d"
+    "sha256=797ba190f0ba256255e429ed2065cac24b79935b50f8f5c9db01a9b541a7922f"
+    "sha512=ecb0249b26f8e1eb49972b69e85939875b1e88ea1aae2d5a6034657bdb6cbf46b3496fc5001129c6bc47ae48e1890b4ae9f428d6d98e5b8fec665e09616c235a"
   ]
 }
