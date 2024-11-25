@@ -115,7 +115,7 @@ available: arch = "%(opam_arch)s" & os = "%(opam_os)s"
 
 versions = [
     Version(
-        tag="2024-11-21.0",
+        tag="2024-11-25.0",
         source_version=source_version,
         ocaml_version=ocaml_version,
         target_triple=target_triple,

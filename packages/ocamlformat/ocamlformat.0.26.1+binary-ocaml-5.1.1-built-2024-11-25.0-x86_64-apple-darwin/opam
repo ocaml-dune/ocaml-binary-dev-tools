@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ocamlformat"
-version: "0.26.2"
+version: "0.26.1"
 synopsis: "Auto-formatter for OCaml code"
 description: """\
 **ocamlformat** is a code formatter for OCaml. It comes with opinionated default settings but is also fully customizable to suit your coding style.
@@ -31,9 +31,9 @@ install: [
 dev-repo: "git+https://github.com/ocaml-ppx/ocamlformat.git"
 available: arch = "x86_64" & os = "macos"
 url {
-  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-11-21.0/ocamlformat.0.26.2+binary-ocaml-5.2.1-built-2024-11-21.0-x86_64-apple-darwin.tar.gz"
+  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-11-25.0/ocamlformat.0.26.1+binary-ocaml-5.1.1-built-2024-11-25.0-x86_64-apple-darwin.tar.gz"
   checksum: [
-    "sha256=76c8459e010e7c7e13eeec09fced09749f203e990d52baf4f3eb7a85b6b35ea0"
-    "sha512=011691371f3bfe259134f52fa6d56d0c49c192872e7f33b8705ee841962864a1257f4eea1c2107efcbd24dd127680fa445920b27b694100e8065983f5c93f405"
+    "sha256=004490e5e4753524be480fae5956d71fdf7b21819feba23c99d91f97e99d3bef"
+    "sha512=80684187f321cc49d5aad8c74d6adbba2df7cd30ceff9ef9451ba4208817c0e3084e95da60bd7c6bb414cf05dcde8c2694e27486d97ea504b2c5b15bd5d5fbf8"
   ]
 }
