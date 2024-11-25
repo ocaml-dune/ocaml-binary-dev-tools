@@ -12,7 +12,7 @@ necessary).
 
 Example usage:
 ```
-$ docker buildx build . --target=export --output type=local,dest=$(pwd)/out/ --build-arg TAG=2024-11-21.0 --build-arg TARGET=x86_64-unknown-linux-musl --build-arg OCAML_VERSION=5.1.1 --build-arg OCAMLFORMAT_VERSION=1.18.0
+$ docker buildx build . --target=export --output type=local,dest=$(pwd)/out/ --build-arg TAG=2024-11-21.0 --build-arg TARGET=x86_64-unknown-linux-musl --build-arg OCAML_VERSION=5.1.1 --build-arg OCAMLFORMAT_VERSION=0.26.2
 
 ```
 
