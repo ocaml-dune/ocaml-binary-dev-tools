@@ -25,7 +25,7 @@ WORKDIR $HOME
 
 RUN opam init --disable-sandboxing --auto-setup --bare
 
-# Build ocamllsp
+# Build ocamlformat
 RUN mkdir switch
 WORKDIR switch
 RUN opam switch create . "ocaml.$OCAML_VERSION"
