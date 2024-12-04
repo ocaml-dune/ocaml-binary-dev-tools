@@ -115,7 +115,7 @@ available: arch = "%(opam_arch)s" & os = "%(opam_os)s"
 
 versions = [
     Version(
-        tag="2024-11-25.0",
+        tag="2024-12-04.0",
         source_version=source_version,
         ocaml_version=ocaml_version,
         target_triple=target_triple,
@@ -128,6 +128,7 @@ versions = [
     for (source_version, ocaml_version) in [
         ("0.26.1", "5.1.1"),
         ("0.26.2", "5.2.1"),
+        ("0.27.0", "5.2.1"),
     ]
 ]
 

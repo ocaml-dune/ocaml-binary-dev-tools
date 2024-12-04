@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ocamlformat"
-version: "0.26.1"
+version: "0.26.2"
 synopsis: "Auto-formatter for OCaml code"
 description: """\
 **ocamlformat** is a code formatter for OCaml. It comes with opinionated default settings but is also fully customizable to suit your coding style.
@@ -29,11 +29,11 @@ install: [
   [ "find" "." "-type" "f" "-exec" "cp" "{}" "%{prefix}%/{}" ";" ]
 ]
 dev-repo: "git+https://github.com/ocaml-ppx/ocamlformat.git"
-available: arch = "x86_64" & os = "linux"
+available: arch = "x86_64" & os = "macos"
 url {
-  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-11-25.0/ocamlformat.0.26.1+binary-ocaml-5.1.1-built-2024-11-25.0-x86_64-unknown-linux-musl.tar.gz"
+  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-12-04.0/ocamlformat.0.26.2+binary-ocaml-5.2.1-built-2024-12-04.0-x86_64-apple-darwin.tar.gz"
   checksum: [
-    "sha256=797ba190f0ba256255e429ed2065cac24b79935b50f8f5c9db01a9b541a7922f"
-    "sha512=ecb0249b26f8e1eb49972b69e85939875b1e88ea1aae2d5a6034657bdb6cbf46b3496fc5001129c6bc47ae48e1890b4ae9f428d6d98e5b8fec665e09616c235a"
+    "sha256=51d6c08b607d476f1a3f97d5c982d4bbd0dc9ede5a26696f238478047e4d4d3a"
+    "sha512=22e6abf796041382ba4e68086d22b9440db5e465ae0a4f8b41c259c8a5f2a36fad8c2264ac6472e5d6f5d52f08df37498c9d4222d917999c93e9ce1a4c65fe8c"
   ]
 }
