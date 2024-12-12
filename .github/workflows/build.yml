@@ -11,29 +11,27 @@ jobs:
       contents: write
     strategy:
       matrix:
-        os: [macos-14, macos-13]
-        ocaml: ["5.2.1", "5.2.0", "5.1.1"]
         include:
           - os: macos-14
             version: "1.19.0"
             ocaml: "5.2.1"
             target_triple: aarch64-apple-darwin
-          - os: macos-14
-            version: "1.19.0"
-            ocaml: "5.2.0"
-            target_triple: aarch64-apple-darwin
-          - os: macos-14
-            version: "1.18.0"
-            ocaml: "5.1.1"
-            target_triple: aarch64-apple-darwin
           - os: macos-13
             version: "1.19.0"
             ocaml: "5.2.1"
             target_triple: x86_64-apple-darwin
+          - os: macos-14
+            version: "1.19.0"
+            ocaml: "5.2.0"
+            target_triple: aarch64-apple-darwin
           - os: macos-13
             version: "1.19.0"
             ocaml: "5.2.0"
             target_triple: x86_64-apple-darwin
+          - os: macos-14
+            version: "1.18.0"
+            ocaml: "5.1.1"
+            target_triple: aarch64-apple-darwin
           - os: macos-13
             version: "1.18.0"
             ocaml: "5.1.1"
@@ -62,8 +60,6 @@ jobs:
       contents: write
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        ocaml: ["5.2.1", "5.2.0", "5.1.1"]
         include:
           - os: ubuntu-latest
             version: "1.19.0"
@@ -97,8 +93,6 @@ jobs:
       contents: write
     strategy:
       matrix:
-        os: [macos-14, macos-13]
-        version: ["0.26.1", "0.26.2", "0.27.0"]
         include:
           - os: macos-13
             version: "0.27.0"
@@ -147,8 +141,6 @@ jobs:
       contents: write
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        version: ["0.26.1", "0.26.2", "0.27.0"]
         include:
           - os: ubuntu-latest
             version: "0.27.0"
