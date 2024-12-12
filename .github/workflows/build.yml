@@ -13,6 +13,22 @@ jobs:
       matrix:
         include:
           - os: macos-14
+            version: "1.20.1"
+            ocaml: "5.2.1"
+            target_triple: aarch64-apple-darwin
+          - os: macos-13
+            version: "1.20.1"
+            ocaml: "5.2.1"
+            target_triple: x86_64-apple-darwin
+          - os: macos-14
+            version: "1.20.1"
+            ocaml: "5.2.0"
+            target_triple: aarch64-apple-darwin
+          - os: macos-13
+            version: "1.20.1"
+            ocaml: "5.2.0"
+            target_triple: x86_64-apple-darwin
+          - os: macos-14
             version: "1.19.0"
             ocaml: "5.2.1"
             target_triple: aarch64-apple-darwin
@@ -61,6 +77,14 @@ jobs:
     strategy:
       matrix:
         include:
+          - os: ubuntu-latest
+            version: "1.20.1"
+            ocaml: "5.2.1"
+            target_triple: x86_64-unknown-linux-musl
+          - os: ubuntu-latest
+            version: "1.20.1"
+            ocaml: "5.2.0"
+            target_triple: x86_64-unknown-linux-musl
           - os: ubuntu-latest
             version: "1.19.0"
             ocaml: "5.2.1"
