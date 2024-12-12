@@ -23,12 +23,12 @@ install: [
   [ "find" "." "-type" "f" "-exec" "cp" "{}" "%{prefix}%/{}" ";" ]
 ]
 dev-repo: "git+https://github.com/ocaml/ocaml-lsp.git"
-available: arch = "x86_64" & os = "linux"
-conflicts: "ocaml" {!= "5.2.0"}
+available: arch = "arm64" & os = "macos"
+conflicts: "ocaml" {!= "5.1.1"}
 url {
-  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-11-21.0/ocaml-lsp-server.1.19.0+binary-ocaml-5.2.0-built-2024-11-21.0-x86_64-unknown-linux-musl.tar.gz"
+  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2024-12-12.0/ocaml-lsp-server.1.18.0+binary-ocaml-5.1.1-built-2024-12-12.0-aarch64-apple-darwin.tar.gz"
   checksum: [
-    "sha256=673683d5b0a6c744116a4930d101457bdbe42d97d462793bf22a48d435cb5b40"
-    "sha512=8be668013c4444a88867ec3677bf1ed31cbadb371626d6fc16ed48eaf56a29b5f42410154ad9976a5b08093d0dfb174e45d317d570243107d719bafa01632e01"
+    "sha256=109bb2a23a003f2d864d9604e1b0a1f33ca1f873ffcb31435c1834e5543a04db"
+    "sha512=257b18cd85dc6e3e06fc937d4e150eebb23c503409a998d1e4a12b1ced61fa8b2562ba9fe81580e84043977dc8566e5f6cee7a195a0313248de15b9c17ff43b3"
   ]
 }
