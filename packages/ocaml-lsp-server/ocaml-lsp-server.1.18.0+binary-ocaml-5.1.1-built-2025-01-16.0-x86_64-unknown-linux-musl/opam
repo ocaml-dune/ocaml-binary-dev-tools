@@ -1,0 +1,34 @@
+opam-version: "2.0"
+name: "ocaml-lsp-server"
+synopsis: "LSP Server for OCaml"
+description: "An LSP server for OCaml."
+maintainer: "Rudi Grinberg <me@rgrinberg.com>"
+authors: [
+  "Andrey Popp <8mayday@gmail.com>"
+  "Rusty Key <iam@stfoo.ru>"
+  "Louis Roché <louis@louisroche.net>"
+  "Oleksiy Golovko <alexei.golovko@gmail.com>"
+  "Rudi Grinberg <me@rgrinberg.com>"
+  "Sacha Ayoun <sachaayoun@gmail.com>"
+  "cannorin <cannorin@gmail.com>"
+  "Ulugbek Abdullaev <ulugbekna@gmail.com>"
+  "Thibaut Mattio <thibaut.mattio@gmail.com>"
+  "Max Lantas <mnxndev@outlook.com>"
+]
+license: "ISC"
+homepage: "https://github.com/ocaml/ocaml-lsp"
+bug-reports: "https://github.com/ocaml/ocaml-lsp/issues"
+install: [
+  [ "find" "." "-type" "d" "-exec" "mkdir" "-p" "%{prefix}%/{}" ";" ]
+  [ "find" "." "-type" "f" "-exec" "cp" "{}" "%{prefix}%/{}" ";" ]
+]
+dev-repo: "git+https://github.com/ocaml/ocaml-lsp.git"
+available: arch = "x86_64" & os = "linux"
+conflicts: "ocaml" {!= "5.1.1"}
+url {
+  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2025-01-16.0/ocaml-lsp-server.1.18.0+binary-ocaml-5.1.1-built-2025-01-16.0-x86_64-unknown-linux-musl.tar.gz"
+  checksum: [
+    "sha256=7cb7768fda0761f9fe76b73003b77db5b7ffa403cc473625153258d62cc3ae84"
+    "sha512=7ff084c32e723641c885838394c27b53b2bef0c38fe2f0a057115564606e053bad248f1451d538552a3c433531a48dc2c5d5f2b35a477363ce8908640ba0a947"
+  ]
+}

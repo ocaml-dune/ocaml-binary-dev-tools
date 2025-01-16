@@ -1,0 +1,34 @@
+opam-version: "2.0"
+name: "ocaml-lsp-server"
+synopsis: "LSP Server for OCaml"
+description: "An LSP server for OCaml."
+maintainer: "Rudi Grinberg <me@rgrinberg.com>"
+authors: [
+  "Andrey Popp <8mayday@gmail.com>"
+  "Rusty Key <iam@stfoo.ru>"
+  "Louis Roché <louis@louisroche.net>"
+  "Oleksiy Golovko <alexei.golovko@gmail.com>"
+  "Rudi Grinberg <me@rgrinberg.com>"
+  "Sacha Ayoun <sachaayoun@gmail.com>"
+  "cannorin <cannorin@gmail.com>"
+  "Ulugbek Abdullaev <ulugbekna@gmail.com>"
+  "Thibaut Mattio <thibaut.mattio@gmail.com>"
+  "Max Lantas <mnxndev@outlook.com>"
+]
+license: "ISC"
+homepage: "https://github.com/ocaml/ocaml-lsp"
+bug-reports: "https://github.com/ocaml/ocaml-lsp/issues"
+install: [
+  [ "find" "." "-type" "d" "-exec" "mkdir" "-p" "%{prefix}%/{}" ";" ]
+  [ "find" "." "-type" "f" "-exec" "cp" "{}" "%{prefix}%/{}" ";" ]
+]
+dev-repo: "git+https://github.com/ocaml/ocaml-lsp.git"
+available: arch = "arm64" & os = "macos"
+conflicts: "ocaml" {!= "5.2.0"}
+url {
+  src: "https://github.com/ocaml-dune/ocaml-binary-packages/releases/download/2025-01-16.0/ocaml-lsp-server.1.20.1+binary-ocaml-5.2.0-built-2025-01-16.0-aarch64-apple-darwin.tar.gz"
+  checksum: [
+    "sha256=40c2e8dda30c940ce20eba032fc1448a521810dded1452bb9bce11dc8b8200d3"
+    "sha512=a86595e17e6c2b77d58b27afc3789ceb880c5514d163e8ae5b2c54b906d8ec389c78cb83b72b02579c4bdd5153ad9f5bb8ff0aa89db2d10f3ae984fec340f34e"
+  ]
+}
