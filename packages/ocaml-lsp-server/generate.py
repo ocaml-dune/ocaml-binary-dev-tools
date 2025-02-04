@@ -110,7 +110,7 @@ conflicts: "ocaml" {!= "%(ocaml_version)s"}
 
 versions = [
     Version(
-        tag="2025-01-16.0",
+        tag="2025-02-04.2",
         source_version=source_version,
         ocaml_version=ocaml_version,
         target_triple=target_triple,
@@ -128,6 +128,7 @@ versions = [
         ("1.20.1", "5.2.1"),
         ("1.21.0", "5.2.0"),
         ("1.21.0", "5.2.1"),
+        ("1.22.0", "5.3.0"),
     ]
 ]
 
